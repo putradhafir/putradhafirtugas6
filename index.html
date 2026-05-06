@@ -735,10 +735,9 @@ void main() {
   print(stringValue);
 }
 </code></pre>
-</div>
-    
+  </div>
     <div class="btn-group">
-        <button class="btn btn-primary" onclick="toggleImage('img')3">
+        <button class="btn btn-primary" onclick="toggleImage('img3')">
             📁 GAMBAR VS Code
         </button>
     </div>
@@ -813,7 +812,14 @@ void main() {
 <h2>5.Multiple Type Parameters</h2>
 <ul>
   <li>
-  
+  Multiple Type Parameters
+Pada program ini, Pair<K, V> merupakan generic class dengan dua parameter tipe yang digunakan untuk menyimpan sepasang data yang saling berhubungan, yaitu key dan value.
+Parameter <K> digunakan sebagai tipe untuk key, sedangkan <V> digunakan sebagai tipe untuk value, sehingga class ini menjadi fleksibel untuk berbagai kombinasi tipe data.
+Class Pair memiliki constructor untuk menginisialisasi nilai key dan value saat objek dibuat.
+Method printPair() digunakan untuk menampilkan pasangan data key dan value ke layar menggunakan print().
+Pada fungsi main(), dibuat beberapa objek yaitu Pair<String, int>, Pair<String, String>, dan Pair<int, double> untuk menunjukkan bahwa class dapat digunakan dengan berbagai tipe data.
+Program kemudian menampilkan isi dari masing-masing objek, sehingga terlihat bahwa setiap pasangan data diproses sesuai dengan tipe yang telah ditentukan.
+Dengan penggunaan generic, program menjadi lebih aman, fleksibel, dan mengurangi kemungkinan kesalahan tipe data saat dijalankan.
 </ul>
    <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -860,7 +866,13 @@ void main() {
 <h2>6.Penerapan Generic Menggabungkan Dua Tipe Data</h2>
 <ul>
   <li>
-    
+    Penerapan Generic Menggabungkan Dua Tipe Data
+Pada program ini, combine<T, U> merupakan generic function yang digunakan untuk menggabungkan dua nilai dengan tipe data yang berbeda.
+Parameter <T> dan <U> memungkinkan fungsi ini menerima dua jenis tipe data yang berbeda, sehingga lebih fleksibel digunakan.
+Fungsi combine() akan mengembalikan hasil berupa String yang berisi gabungan dari value1 dan value2.
+Pada fungsi main(), dilakukan pemanggilan fungsi combine<String, int> untuk menggabungkan teks dan angka, serta combine<int, double> untuk menggabungkan dua angka dengan tipe berbeda.
+Hasil dari fungsi kemudian ditampilkan menggunakan print(), sehingga terlihat bahwa fungsi dapat bekerja dengan berbagai kombinasi tipe data.
+Dengan penggunaan generic function, program menjadi lebih fleksibel karena satu fungsi dapat digunakan untuk berbagai jenis tipe data tanpa harus membuat fungsi yang berbeda-beda.
 </ul>    
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -897,7 +909,15 @@ void main() {
 <h2>7.Generic Dengan Extends</h2>
 <ul>
   <li>
- 
+ Generic Dengan Extends
+Pada program ini, NumberBox<T> merupakan generic class yang digunakan untuk menyimpan data dengan tipe tertentu, namun memiliki batasan hanya untuk tipe numerik.
+Penggunaan <T extends num> berarti tipe T hanya boleh berupa tipe data yang termasuk dalam kategori angka, seperti int dan double.
+Hal ini membuat class NumberBox tidak dapat digunakan untuk tipe selain numerik, misalnya String, sehingga meningkatkan keamanan tipe data (type safety).
+Constructor NumberBox(this.value) digunakan untuk menginisialisasi nilai awal saat objek dibuat.
+Method getValue() digunakan untuk mengambil dan mengembalikan nilai yang tersimpan di dalam objek.
+Pada fungsi main(), dibuat objek NumberBox<int> dan NumberBox<double> yang menunjukkan bahwa class hanya dapat digunakan untuk tipe numerik.
+Baris NumberBox<String> tidak dapat digunakan karena akan menghasilkan error, sebab String bukan termasuk tipe numerik.
+Dengan penggunaan bounded generic, program menjadi lebih aman karena tipe data dibatasi sesuai kebutuhan, sehingga mengurangi kesalahan saat program dijalankan.
 </ul>    
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -942,7 +962,13 @@ void main() {
 <h2>8.Type Inference (Inferensi Tipe)</h2>
 <ul>
   <li>
-    
+    Type Inference (Inferensi Tipe)
+Pada program ini, myFunc<T> merupakan generic function yang digunakan untuk menerima dan mengembalikan nilai dengan tipe data yang sama.
+Tipe <T> membuat fungsi ini bersifat fleksibel karena dapat digunakan untuk berbagai jenis data seperti int, String, dan tipe data lainnya.
+Fungsi myFunc() hanya mengembalikan nilai yang dikirimkan tanpa mengubah tipe datanya, sehingga tetap sesuai dengan input yang diberikan.
+Pada fungsi main(), pemanggilan myFunc(10) secara otomatis akan bertipe int, dan myFunc("test") akan bertipe String karena Dart mendeteksi tipe secara otomatis (type inference).
+Method runtimeType digunakan untuk menampilkan tipe data asli dari variabel saat program dijalankan.
+Dengan penggunaan generic function, program menjadi lebih sederhana, fleksibel, dan tetap aman karena tipe data tetap konsisten antara input dan output.
 </ul>    
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -979,7 +1005,13 @@ void main() {
 <h2>9.Pembatasan Tipe Pada Interface dan Class</h2>
 <ul>
   <li>
-  
+  Pembatasan Tipe Pada Interface dan Class
+Pada program ini, printIterable<T extends Iterable<dynamic>> merupakan generic function yang digunakan untuk mencetak semua elemen dari sebuah data yang bersifat iterable.
+Batasan <T extends Iterable<dynamic>> berarti fungsi ini hanya dapat menerima tipe data yang bisa diiterasi seperti List dan Set.
+Fungsi printIterable() akan melakukan perulangan menggunakan for-in loop untuk menampilkan setiap elemen yang ada di dalam koleksi data.
+Pada fungsi main(), digunakan List<int> dan Set<String> sebagai contoh data yang valid karena keduanya termasuk tipe Iterable.
+Baris printIterable<int>(10) akan menghasilkan error karena tipe int bukan termasuk Iterable, sehingga tidak dapat digunakan dalam fungsi ini.
+Dengan penggunaan bounded generic pada Iterable, program menjadi lebih aman karena hanya menerima struktur data yang dapat diiterasi, sehingga menghindari kesalahan saat runtime.
 </ul>    
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -1017,7 +1049,13 @@ void main() {
 <h2>10.Pembatasan Tipe Dengan Class Abstract</h2>
 <ul>
   <li>
-   
+   Pembatasan Tipe Dengan Class Abstract
+​Struktur ini memanfaatkan kontrak perilaku melalui kelas abstrak untuk memastikan bahwa tipe data yang masuk ke dalam sistem memiliki standarisasi tertentu. Di sini, Animal bertindak sebagai kerangka dasar yang mendefinisikan metode wajib makeSound().
+​Standarisasi Perilaku: Setiap kelas turunan seperti Dog dan Cat harus mengikuti aturan dari Animal. Hal ini menjamin bahwa setiap objek yang tercipta memiliki fungsionalitas suara yang unik namun tetap terorganisir.
+​Mekanisme Bounded Generic: Dengan deklarasi AnimalCage<T extends Animal>, kita menciptakan sistem keamanan berlapis. Parameter <T> tidak lagi bersifat bebas, melainkan terkunci hanya untuk keluarga besar Animal.
+​Keamanan Tipe (Type Safety): Jika sistem mencoba memasukkan tipe data yang tidak relevan (seperti String), program akan menolaknya secara otomatis. Ini mencegah kesalahan logika di mana sistem mencoba memanggil fungsi "suara" pada objek yang secara alami tidak memilikinya.
+​Implementasi Polymorphism: Melalui metode sound() di dalam kandang, program dapat memicu suara hewan tanpa perlu tahu secara spesifik apakah itu anjing atau kucing. Ini menciptakan kode yang bersih dan sangat terstruktur.
+​Dengan mengombinasikan inheritance dan bounded generics, program mencapai tingkat fleksibilitas yang cerdas: fleksibel untuk semua jenis hewan, namun tertutup rapat bagi tipe data yang tidak memenuhi kriteria.
 </ul>    
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
@@ -1073,4 +1111,341 @@ void main() {
 
     <img id="img10" class="vscode-image" src="vscode10.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode10.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      <!-- 11 -->
+<div class="section">
+<h2>11.Praktik Generic Class & Fungsi</h2>
+<ul>
+  <li>
+   Praktik Generic Class & Fungsi
+​Sistem ini menunjukkan bagaimana abstraksi tipe data dapat diterapkan pada berbagai level, mulai dari struktur penyimpanan hingga logika pemrosesan, untuk menciptakan kode yang sangat efisien dan dapat digunakan kembali.
+​Penyimpanan Dinamis dengan Repository<T>: Kelas ini bertindak sebagai manajer data universal. Dengan menggunakan parameter <T>, kelas ini mampu melakukan operasi CRUD (seperti save, getById, dan getAll) pada koleksi data apa pun, memastikan bahwa logika pengelolaan tetap konsisten baik untuk angka, teks, maupun objek kompleks.
+​Logika Universal melalui swap<T>: Ini adalah contoh generic function yang murni. Fungsi ini berfokus pada algoritma pertukaran posisi elemen dalam daftar. Karena menggunakan tipe generik, fungsi yang sama dapat bekerja pada daftar berisi data apa saja tanpa perlu menulis ulang logika untuk setiap tipe data baru.
+​Struktur Data Multi-Tipe dengan Triple<A, B, C>: Berbeda dengan kelas yang hanya memiliki satu tipe, Triple menunjukkan kemampuan generik dalam menangani hubungan antar-data. Kelas ini mampu membungkus tiga informasi berbeda—misalnya identitas (String), jumlah (int), dan nilai presisi (double)—ke dalam satu kesatuan objek yang rapi.
+​Implementasi dan Efisiensi: Pada eksekusi utamanya, penggunaan Repository<int> dan objek Triple membuktikan bahwa satu kerangka kerja dapat melayani berbagai skenario kebutuhan data. Hasil akhirnya adalah program yang tidak hanya fleksibel, tetapi juga type-safe, di mana kesalahan tipe data dapat dicegah sejak dini.
+​Dengan pendekatan ini, kode program menjadi jauh lebih ringkas (reusable) karena kita tidak perlu menduplikasi fungsi yang sama hanya untuk tipe data yang berbeda, sekaligus menjaga struktur aplikasi tetap teratur.
+</ul>
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410004
+// Kelas : SI.2A
+
+// Repository Generic
+class Repository<T> {
+  List<T> _items = [];
+
+  void save(T item) {
+    _items.add(item);
+  }
+
+  T getById(int id) {
+    return _items[id];
+  }
+
+  List<T> getAll() {
+    return _items;
+  }
+}
+
+// Fungsi swap
+void swap<T>(List<T> list, int i, int j) {
+  var temp = list[i];
+  list[i] = list[j];
+  list[j] = temp;
+}
+
+// Class Triple
+class Triple<A, B, C> {
+  A first;
+  B second;
+  C third;
+
+  Triple(this.first, this.second, this.third);
+}
+
+void main() {
+  var repo = Repository<int>();
+  repo.save(10);
+  repo.save(20);
+
+  print(repo.getAll());
+
+  var list = [1, 2, 3];
+  swap(list, 0, 2);
+  print(list);
+
+  var triple = Triple<String, int, double>("Age", 21, 1.75);
+  print("${triple.first}, ${triple.second}, ${triple.third}");
+}    
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img11')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img11" class="vscode-image" src="vscode11.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode11.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      <!-- 12 -->
+<div class="section">
+<h2>12.Studi Kasus - cache Generic</h2>
+<ul>
+  <li>
+  Studi Kasus - cache Generic
+Pada program ini, Cache<T> merupakan generic class yang digunakan untuk menyimpan data sementara (cache) dengan tipe yang fleksibel menggunakan struktur Map.
+Tipe <T> memungkinkan class Cache menyimpan berbagai jenis data seperti String, int, atau bahkan objek seperti Product.
+Method set() digunakan untuk menyimpan data ke dalam cache berdasarkan key, sedangkan method get() digunakan untuk mengambil data, dan remove() digunakan untuk menghapus data dari cache.
+Class Product merupakan class tambahan yang digunakan sebagai contoh objek yang disimpan dalam cache, dengan atribut name dan price.
+Method toString() pada class Product digunakan untuk mengubah objek menjadi bentuk teks agar mudah ditampilkan saat dicetak.
+Pada fungsi main(), dibuat dua objek cache yaitu Cache<String> untuk menyimpan data teks dan Cache<Product> untuk menyimpan objek produk.
+Program kemudian menampilkan hasil menggunakan print() untuk menunjukkan bahwa cache dapat menyimpan dan mengambil data dengan berbagai tipe secara fleksibel.
+Dengan penggunaan generic, program menjadi lebih fleksibel, reusable, dan type-safe karena satu class dapat digunakan untuk berbagai jenis data tanpa mengubah struktur kode.
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+class Cache<T> {
+  final Map<String, T> _storage = {};
+
+  void set(String key, T value) {
+    _storage[key] = value;
+  }
+
+  T? get(String key) {
+    return _storage[key];
+  }
+
+  void remove(String key) {
+    _storage.remove(key);
+  }
+}
+
+// Tambahan agar bisa jalan
+class Product {
+  String name;
+  int price;
+
+  Product(this.name, this.price);
+
+  @override
+  String toString() {
+    return 'Product(name: $name, price: $price)';
+  }
+}
+
+void main() {
+  var userCache = Cache<String>();
+  userCache.set('name', 'Alice');
+
+  print(userCache.get('name'));
+
+  var productCache = Cache<Product>();
+  productCache.set('p1', Product('Laptop', 1000));
+
+  print(productCache.get('p1'));
+}    
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img12')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img12" class="vscode-image" src="vscode12.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode12.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      <!-- 13 -->
+<div class="section">
+<h2>13.Latihan</h2>
+<ul>
+  <li>
+    Latihan
+Pada program ini, Stack<T> merupakan generic class yang digunakan untuk menerapkan struktur data stack (LIFO) dengan tipe data yang fleksibel.
+Tipe <T> memungkinkan class Stack menyimpan berbagai jenis data seperti int, String, atau tipe lainnya sesuai kebutuhan.
+Method push() digunakan untuk menambahkan data ke dalam stack, pop() untuk mengambil dan menghapus data terakhir, dan peek() untuk melihat data teratas tanpa menghapusnya.
+Fungsi mergeLists<T> merupakan generic function yang digunakan untuk menggabungkan dua list menjadi satu list baru dengan tipe data yang sama.
+Class Response<T> merupakan generic class yang digunakan untuk menampung hasil proses, baik berupa data maupun error.
+Pada fungsi main(), dibuat objek Stack<int> untuk menyimpan angka, kemudian dilakukan operasi push, pop, dan peek.
+Selain itu, digunakan fungsi mergeLists untuk menggabungkan dua list, serta objek Response<String> untuk menampilkan hasil response.
+Dengan penggunaan generic, program menjadi lebih fleksibel, reusable, dan type-safe karena satu struktur data dan fungsi dapat digunakan untuk berbagai tipe data tanpa perubahan kode utama.
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+// =======================
+// 1. STACK<T>
+// =======================
+class Stack<T> {
+  final List<T> _items = [];
+
+  void push(T value) {
+    _items.add(value);
+  }
+
+  T? pop() {
+    if (_items.isEmpty) return null;
+    return _items.removeLast();
+  }
+
+  T? peek() {
+    if (_items.isEmpty) return null;
+    return _items.last;
+  }
+}
+
+// =======================
+// 2. MERGE LISTS
+// =======================
+List<T> mergeLists<T>(List<T> a, List<T> b) {
+  return [...a, ...b];
+}
+
+// =======================
+// 3. RESPONSE<T>
+// =======================
+class Response<T> {
+  T? data;
+  String? error;
+
+  Response({this.data, this.error});
+}
+
+// =======================
+// MAIN
+// =======================
+void main() {
+  // Stack
+  var stack = Stack<int>();
+  stack.push(10);
+  stack.push(20);
+  print('Peek: ${stack.peek()}');
+  print('Pop: ${stack.pop()}');
+
+  // Merge Lists
+  var result = mergeLists([1, 2], [3, 4]);
+  print('Merge: $result');
+
+  // Response
+  var res = Response<String>(data: "Berhasil");
+  print('Response: ${res.data}');
+}    
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img13')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img13" class="vscode-image" src="vscode13.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode13.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      <!-- 14 -->
+<div class="section">
+<h2>14.Challange</h2>
+<ul>
+  <li>
+ Latihan
+Pada program ini, Stack<T> merupakan generic class yang digunakan untuk menerapkan struktur data stack (LIFO) dengan tipe data yang fleksibel.
+Tipe <T> memungkinkan class Stack menyimpan berbagai jenis data seperti int, String, atau tipe lainnya sesuai kebutuhan.
+Method push() digunakan untuk menambahkan data ke dalam stack, pop() untuk mengambil dan menghapus data terakhir, dan peek() untuk melihat data teratas tanpa menghapusnya.
+Fungsi mergeLists<T> merupakan generic function yang digunakan untuk menggabungkan dua list menjadi satu list baru dengan tipe data yang sama.
+Class Response<T> merupakan generic class yang digunakan untuk menampung hasil proses, baik berupa data maupun error.
+Pada fungsi main(), dibuat objek Stack<int> untuk menyimpan angka, kemudian dilakukan operasi push, pop, dan peek.
+Selain itu, digunakan fungsi mergeLists untuk menggabungkan dua list, serta objek Response<String> untuk menampilkan hasil response.
+Dengan penggunaan generic, program menjadi lebih fleksibel, reusable, dan type-safe karena satu struktur data dan fungsi dapat digunakan untuk berbagai tipe data tanpa perubahan kode utama.
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+// =======================
+// GENERIC REPOSITORY
+// =======================
+class Repository<T> {
+  final List<T> _data = [];
+
+  // tambah data
+  void add(T item) {
+    _data.add(item);
+  }
+
+  // ambil semua data
+  List<T> getAll() {
+    return _data;
+  }
+
+  // hapus data
+  void remove(T item) {
+    _data.remove(item);
+  }
+}
+
+// =======================
+// CONTOH CLASS
+// =======================
+class Product {
+  String name;
+  int price;
+
+  Product(this.name, this.price);
+
+  @override
+  String toString() {
+    return 'Product(name: $name, price: $price)';
+  }
+}
+
+// =======================
+// MAIN
+// =======================
+void main() {
+  // Repository untuk String
+  var userRepo = Repository<String>();
+  userRepo.add("Alice");
+  userRepo.add("Bob");
+
+  print("User Repo: ${userRepo.getAll()}");
+
+  // Repository untuk Product
+  var productRepo = Repository<Product>();
+  productRepo.add(Product("Laptop", 1000));
+  productRepo.add(Product("Mouse", 200));
+
+  print("Product Repo: ${productRepo.getAll()}");
+
+  // Hapus data
+  userRepo.remove("Alice");
+  print("User Repo setelah hapus: ${userRepo.getAll()}");
+}
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img14')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img14" class="vscode-image" src="vscode14.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode14.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
