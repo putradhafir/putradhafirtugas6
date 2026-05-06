@@ -936,3 +936,141 @@ void main() {
     <img id="img7" class="vscode-image" src="vscode7.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode7.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
+
+      <!-- 8 -->
+<div class="section">
+<h2>8.Type Inference (Inferensi Tipe)</h2>
+<ul>
+  <li>
+    
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+T myFunc<T>(T value) {
+  return value;
+}
+
+void main() {
+  var intValue = myFunc(10); // otomatis int
+  print(intValue.runtimeType);
+
+  var stringValue = myFunc("test"); // otomatis String
+  print(stringValue.runtimeType);
+}    
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img8')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img8" class="vscode-image" src="vscode8.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode8.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      <!-- 9 -->
+<div class="section">
+<h2>9.Pembatasan Tipe Pada Interface dan Class</h2>
+<ul>
+  <li>
+  
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+void printIterable<T extends Iterable<dynamic>>(T iterable) {
+  for (var item in iterable) {
+    print(item);
+  }
+}
+
+void main() {
+  printIterable<List<int>>([1, 2, 3]);
+  printIterable<Set<String>>({'apple', 'banana'});
+
+  // printIterable<int>(10); // ❌ Error
+}
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img9')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img9" class="vscode-image" src="vscode9.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode9.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
+      - 10 -->
+<div class="section">
+<h2>10.Pembatasan Tipe Dengan Class Abstract</h2>
+<ul>
+  <li>
+   
+</ul>    
+<h3>Kode Program VS Code:</h3>
+<div class="code-box">
+<pre><code>
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI.2A
+
+abstract class Animal {
+  void makeSound();
+}
+
+class Dog implements Animal {
+  @override
+  void makeSound() {
+    print("Woof!");
+  }
+}
+
+class Cat implements Animal {
+  @override
+  void makeSound() {
+    print("Meow!");
+  }
+}
+
+class AnimalCage<T extends Animal> {
+  T animal;
+
+  AnimalCage(this.animal);
+
+  void sound() {
+    animal.makeSound();
+  }
+}
+
+void main() {
+  var dogCage = AnimalCage<Dog>(Dog());
+  dogCage.sound();
+
+  var catCage = AnimalCage<Cat>(Cat());
+  catCage.sound();
+
+  // var wrong = AnimalCage<String>("test"); // ❌ Error
+}
+</code></pre>
+</div>
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img10')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img10" class="vscode-image" src="vscode10.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode10.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
