@@ -584,34 +584,17 @@ window.onclick = function(e) {
 <h2>1.Tanpa Generic</h2>
 <ul>
   <li>
-    Pada program ini, <b>Box</b> merupakan class yang digunakan untuk menyimpan data.
-  </li>
-
-  <li>
-    Class <b>Box</b> menggunakan tipe data <b>dynamic</b>, sehingga dapat menampung berbagai jenis data.
-  </li>
-
-  <li>
-    Data yang disimpan awalnya berupa <b>int</b>, kemudian dapat diubah menjadi <b>String</b>.
-  </li>
-
-  <li>
-    Karena tidak ada pembatasan tipe data, program berpotensi mengalami kesalahan.
-  </li>
-
-  <li>
-    Kesalahan biasanya terjadi saat program dijalankan <i>(runtime error)</i>.
-  </li>
-
-  <li>
-    Dengan demikian, penggunaan <b>dynamic</b> bersifat fleksibel namun kurang aman.
-  </li>
+​Pada struktur ini, sebuah kontainer atau variabel didefinisikan secara umum untuk menangani berbagai macam objek sekaligus. Pendekatan ini mengandalkan fleksibilitas total di mana satu wadah bisa menerima input apa pun tanpa aturan yang ketat di awal.
+​Mekanisme: Variabel tersebut tidak dikunci pada satu tipe data spesifik, sehingga sebuah objek angka bisa dengan mudah digantikan oleh objek teks dalam alur yang sama.
+​Risiko: Karena sistem tidak memverifikasi kesesuaian tipe data saat kode ditulis, beban pemeriksaan berpindah sepenuhnya ke saat program dijalankan.
+​Dampak: Hal ini sering memicu munculnya exception atau kegagalan sistem secara mendadak jika data yang diproses tidak sesuai dengan ekspektasi logika program.
+​Singkatnya, tanpa Generic, kode menjadi sangat dinamis namun rentan terhadap kesalahan tersembunyi yang sulit dideteksi sebelum aplikasi benar-benar digunakan.
 </ul>
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
+// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
 // Kelas : SI.2A
 
 // =====================
@@ -655,39 +638,17 @@ void main() {
 <h2>2.Dengan Generic</h2>
     <ul>
   <li>
-    Pada program ini, <b>Box&lt;T&gt;</b> digunakan sebagai class generic 
-    yang dapat menyimpan berbagai tipe data sesuai dengan tipe yang diberikan.
-  </li>
-
-  <li>
-    Tipe <b>&lt;T&gt;</b> memungkinkan class <b>Box</b> menjadi fleksibel, 
-    sehingga dapat digunakan untuk menyimpan data bertipe <b>int</b>, 
-    <b>String</b>, atau tipe lainnya.
-  </li>
-
-  <li>
-    Pada fungsi <b>main()</b>, dibuat dua objek yaitu 
-    <b>Box&lt;int&gt;</b> dan <b>Box&lt;String&gt;</b> untuk menyimpan 
-    data dengan tipe yang berbeda.
-  </li>
-
-  <li>
-    Program kemudian menampilkan isi dari masing-masing objek menggunakan 
-    <b>print()</b>, sehingga terlihat bahwa setiap Box menyimpan data 
-    sesuai dengan tipe yang telah ditentukan.
-  </li>
-
-  <li>
-    Dengan penggunaan generic, program menjadi lebih aman karena tipe data 
-    tidak dapat diubah sembarangan, sehingga menghindari kesalahan tipe data 
-    saat program dijalankan.
-  </li>
+​Dalam skema ini, kontainer didefinisikan menggunakan parameter tipe formal (seperti <T>) yang bertindak sebagai cetak biru yang presisi. Hal ini memungkinkan struktur data untuk beradaptasi dengan berbagai jenis input tanpa kehilangan identitas aslinya.
+​Mekanisme: Saat objek dibuat, kita menentukan tipe data spesifik yang akan dikunci ke dalam wadah tersebut. Misalnya, sebuah wadah yang dideklarasikan untuk angka hanya akan menerima angka, dan wadah untuk teks hanya akan menerima teks.
+​Keamanan: Sistem melakukan verifikasi ketat pada saat penulisan kode (compile-time). Jika ada upaya untuk memasukkan data yang tidak sesuai dengan tipe yang telah ditentukan, program akan memberikan peringatan atau error sebelum sempat dijalankan.
+​Dampak: Penggunaan ini menghilangkan kebutuhan untuk melakukan konversi tipe data secara manual dan drastis mengurangi risiko terjadinya runtime error terkait ketidakcocokan tipe.
+​Secara keseluruhan, penggunaan Generic memberikan keseimbangan antara fleksibilitas kode dan kepastian logika, sehingga aplikasi menjadi lebih stabil dan mudah dipelihara.
 </ul>
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-// Nama  : Yoza Ulpia Rafila
-// NIM   : 251410004
+// Nama  : Putra Dhafir Nashrulllah
+// NIM   : 251410009
 // Kelas : SI.2A
 
 // =====================
