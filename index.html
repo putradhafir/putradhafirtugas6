@@ -178,3 +178,61 @@ function runDart(id, link){
     </div>
 
 </div>
+
+<!-- SECTION 1: SEALED CLASS -->
+<div class="section">
+    <h2>01. Pengenalan Sealed Class</h2>
+    
+    <p><strong>✦ Pengertian Sealed Class</strong></p>
+    <ul>
+        <li>Sealed class adalah jenis class khusus dalam bahasa pemrograman Dart yang membatasi pewarisan (inheritance) hanya dalam satu file yang sama.</li>
+    </ul>
+
+    <p><strong>✦ Contoh Implementasi</strong></p>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+// SEALED CLASS - Membatasi pewarisan hanya dalam satu file
+sealed class ApiResponse {}
+
+class Success extends ApiResponse {
+  final String message;
+  Success(this.message);
+}
+
+class Error extends ApiResponse {
+  final String errorMessage;
+  Error(this.errorMessage);
+}
+
+class Loading extends ApiResponse {} // ✅ Ditambahkan
+
+void handleResponse(ApiResponse response) {
+  if (response is Success) {
+    print("✅ Success: ${response.message}");
+  } else if (response is Error) {
+    print("❌ Error: ${response.errorMessage}");
+  } else if (response is Loading) {
+    print("⏳ Loading..."); // ✅ Ditambahkan
+  }
+}
+
+void main() {
+  handleResponse(Success("Data berhasil diambil"));
+  handleResponse(Error("Terjadi kesalahan pada server"));
+  handleResponse(Loading()); // ✅ Ditambahkan
+}</code></pre>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img1')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img1" class="vscode-image" src="vscode1baruu.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode1baruu.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div>
+
