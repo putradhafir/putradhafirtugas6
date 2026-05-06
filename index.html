@@ -861,27 +861,22 @@ void main() {
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode5.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
 
-      <!-- 6 -->
+     <!-- 6 -->
 <div class="section">
-<h2>6.Penerapan Generic Menggabungkan Dua Tipe Data</h2>
-<ul>
-  <li>
-    Penerapan Generic Menggabungkan Dua Tipe Data
-Pada program ini, combine<T, U> merupakan generic function yang digunakan untuk menggabungkan dua nilai dengan tipe data yang berbeda.
-Parameter <T> dan <U> memungkinkan fungsi ini menerima dua jenis tipe data yang berbeda, sehingga lebih fleksibel digunakan.
-Fungsi combine() akan mengembalikan hasil berupa String yang berisi gabungan dari value1 dan value2.
-Pada fungsi main(), dilakukan pemanggilan fungsi combine&lt;String, int&gt;untuk menggabungkan teks dan angka, serta combine&lt;String, int&gt; untuk menggabungkan dua angka dengan tipe berbeda.
-Hasil dari fungsi kemudian ditampilkan menggunakan print(), sehingga terlihat bahwa fungsi dapat bekerja dengan berbagai kombinasi tipe data.
-Dengan penggunaan generic function, program menjadi lebih fleksibel karena satu fungsi dapat digunakan untuk berbagai jenis tipe data tanpa harus membuat fungsi yang berbeda-beda.
-</ul>    
-<h3>Kode Program VS Code:</h3>
-<div class="code-box">
-<pre><code>
+  <h2>6. Penerapan Generic Menggabungkan Dua Tipe Data</h2>
+  <ul>
+    <li>
+      Penerapan Generic Menggabungkan Dua Tipe Data. Pada program ini, combine&lt;T, U&gt; merupakan generic function yang digunakan untuk menggabungkan dua nilai dengan tipe data yang berbeda. Parameter &lt;T&gt; dan &lt;U&gt; memungkinkan fungsi ini menerima dua jenis tipe data yang berbeda, sehingga lebih fleksibel digunakan. Fungsi combine() akan mengembalikan hasil berupa String yang berisi gabungan dari value1 dan value2. Pada fungsi main(), dilakukan pemanggilan fungsi combine&lt;String, int&gt; untuk menggabungkan teks dan angka, serta combine&lt;int, double&gt; untuk menggabungkan dua angka dengan tipe berbeda. Hasil dari fungsi kemudian ditampilkan menggunakan print(), sehingga terlihat bahwa fungsi dapat bekerja dengan berbagai kombinasi tipe data. Dengan penggunaan generic function, program menjadi lebih fleksibel karena satu fungsi dapat digunakan untuk berbagai jenis tipe data tanpa harus membuat fungsi yang berbeda-beda.
+    </li>
+  </ul>    
+  <h3>Kode Program VS Code:</h3>
+  <div class="code-box">
+    <pre><code>
 // Nama  : Putra Dhafir Nashrullah
 // NIM   : 251410009
 // Kelas : SI.2A
 
-String combine<T. U>(T value1, U value2) {
+String combine&lt;T, U&gt;(T value1, U value2) {
   return '$value1, $value2';
 }
 
@@ -889,10 +884,11 @@ void main() {
   var result1 = combine&lt;String, int&gt;('Number is', 10);
   print(result1);
 
-  var result2 = combine<int, double>(10, 20.5);
+  var result2 = combine&lt;int, double&gt;(10, 20.5);
   print(result2);
 }
-</code></pre>
+    </code></pre>
+  </div>
 </div>
     <div class="btn-group">
         <button class="btn btn-primary" onclick="toggleImage('img6')">
